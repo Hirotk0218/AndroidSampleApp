@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">四則演算アプリ</string>
+
+    <string name="hint_text">数字を入力してください</string>
+    <string name="error_text">数字を正しく入力してください</string>
+    <string name="calculation_error_text">計算中に問題が発生いたしました。\n再度ボタンを押してください。</string>
+    <string name="divide_error_text">分母が0なので、0以外の数字を入力してください。</string>
+
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="multiply">×</string>
+    <string name="divide">÷</string>
+    <string name="back">戻る</string>
+</resources>

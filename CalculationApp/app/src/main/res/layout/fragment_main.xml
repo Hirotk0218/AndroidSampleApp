@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="12dp"
+        android:paddingTop="60dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="0dp"
+        tools:ignore="Autofill">
+
+        <EditText
+            android:id="@+id/input1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_text"
+            android:inputType="numberDecimal"
+            android:minLines="1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/input2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/hint_text"
+            android:inputType="numberDecimal"
+            android:minLines="1"
+            app:layout_constraintTop_toBottomOf="@+id/input1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/input2">
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="@string/add"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/subtract"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/subtract"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="@string/subtract"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/multiply"
+                app:layout_constraintStart_toEndOf="@+id/add"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/multiply"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="@string/multiply"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/divide"
+                app:layout_constraintStart_toEndOf="@+id/subtract"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/divide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="@string/divide"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/multiply"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
