@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">あいさつアプリ</string>
+
+    <string name="button_text">時間設定</string>
+    <string name="explanation">設定した時刻に応じて、\n日本語、英語、ドイツの3ヵ国語の挨拶を表示します。</string>
+    <string name="explanation2">・2:00 ~ 9:59：朝\n・10:00 ~ 17:59：昼\n・18:00 ~ 1:59：夜</string>
+    <string name="explanation3">テキストをクリックすると、音声が再生されます。\n初期値は現在の時刻になります。</string>
+
+    <string name="jp_label">日：</string>
+    <string name="en_label">英：</string>
+    <string name="ger_label">独：</string>
+
+    <string name="morning_jp">おはようございます。</string>
+    <string name="morning_en">Good morning.</string>
+    <string name="morning_ger">Guten Morgen.</string>
+
+    <string name="noon_jp">こんにちは。</string>
+    <string name="noon_en">Hello.</string>
+    <string name="noon_ger">Hallo.</string>
+
+    <string name="night_jp">こんばんは。</string>
+    <string name="night_en">Good evening.</string>
+    <string name="night_ger">Guten Abend.</string>
+</resources>

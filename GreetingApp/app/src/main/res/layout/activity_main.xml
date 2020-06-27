@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        tools:context=".MainActivity"
+        tools:ignore="ContentDescription">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <TextView
+            android:id="@+id/explanation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/explanation"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/timerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:drawableStart="@drawable/ic_timer"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/noto_sans_jp_regular"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/button_text"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/explanation" />
+
+        <TextView
+            android:id="@+id/explanation2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/explanation2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerButton" />
+
+        <TextView
+            android:id="@+id/explanation3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/explanation3"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/greetingJpLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/greetingJpLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notable_regular"
+            android:text="@string/jp_label"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/greetingEnLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerButton"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/greetingJp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notable_regular"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingJpLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/greetingJpLabel"
+            app:layout_constraintTop_toTopOf="@+id/greetingJpLabel"
+            tools:text="@string/morning_jp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_volume"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingJpLabel"
+            app:layout_constraintStart_toStartOf="@id/rightGuideline"
+            app:layout_constraintTop_toTopOf="@+id/greetingJpLabel" />
+
+        <TextView
+            android:id="@+id/greetingEnLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/notable_regular"
+            android:text="@string/en_label"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/greetingGerLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greetingJpLabel" />
+
+        <TextView
+            android:id="@+id/greetingEn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notable_regular"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingEnLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/greetingEnLabel"
+            app:layout_constraintTop_toTopOf="@+id/greetingEnLabel"
+            tools:text="@string/morning_en" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_volume"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingEnLabel"
+            app:layout_constraintStart_toStartOf="@id/rightGuideline"
+            app:layout_constraintTop_toTopOf="@+id/greetingEnLabel" />
+
+        <TextView
+            android:id="@+id/greetingGerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/notable_regular"
+            android:text="@string/ger_label"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greetingEnLabel" />
+
+        <TextView
+            android:id="@+id/greetingGer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notable_regular"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingGerLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/greetingGerLabel"
+            app:layout_constraintTop_toTopOf="@+id/greetingGerLabel"
+            tools:text="@string/morning_ger" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_volume"
+            app:layout_constraintBottom_toBottomOf="@+id/greetingGerLabel"
+            app:layout_constraintStart_toStartOf="@id/rightGuideline"
+            app:layout_constraintTop_toTopOf="@+id/greetingGerLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
