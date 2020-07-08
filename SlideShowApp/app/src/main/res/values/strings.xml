@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SlideShowApp</string>
+    <string name="title">タイトル</string>
+    <string name="title_show_slide_image">%d 枚目を表示</string>
+    <string name="warning_no_slide">画像を追加してください。</string>
+    <string name="warning_not_play">再生中は操作できません。</string>
+</resources>
