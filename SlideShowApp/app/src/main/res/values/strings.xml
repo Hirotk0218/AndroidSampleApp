@@ -4,4 +4,21 @@
     <string name="title_show_slide_image">%d 枚目を表示</string>
     <string name="warning_no_slide">画像を追加してください。</string>
     <string name="warning_not_play">再生中は操作できません。</string>
+    <string name="error_not_play">予期せぬエラーが発生しました。\nアプリを一度閉じてください。</string>
+
+    <string-array name="animation_list">
+        <item>まばたき</item>
+        <item>バウンド</item>
+        <item>フェードイン</item>
+        <item>フェードアウト</item>
+        <item>移動</item>
+        <item>回転</item>
+        <item>下にスクロール</item>
+        <item>左にスクロール</item>
+        <item>右にスクロール</item>
+        <item>上にスクロール</item>
+        <item>拡大</item>
+        <item>縮小</item>
+    </string-array>
+
 </resources>

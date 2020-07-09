@@ -10,10 +10,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableInt
 import com.example.slideshowapp.databinding.ActivityMainBinding
+import com.example.slideshowapp.dialog.MainDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
@@ -34,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private var mHandler = Handler()
     private var isPermissionAccess = false
     private lateinit var binding: ActivityMainBinding
+    private lateinit var animation: Animation
     //endregion
 
     //region MARK: - activity lifeCycle methods
@@ -43,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.data = this
+        animation = AnimationUtils.loadAnimation(this, R.anim.blink)
 
         binding.play.setOnClickListener {
             if (isPermissionAccess) {
@@ -59,6 +64,17 @@ class MainActivity : AppCompatActivity() {
         binding.back.setOnClickListener {
             if (isPermissionAccess) {
                 onClickBackButton()
+            }
+        }
+
+        binding.animation.setOnClickListener {
+
+            val mainDialogFragment = MainDialogFragment()
+            mainDialogFragment.apply {
+                onClickItem = {
+                    setSelectedAnimation(it)
+                }
+                showDialog(this@MainActivity.supportFragmentManager)
             }
         }
     }
@@ -178,6 +194,7 @@ class MainActivity : AppCompatActivity() {
                             if (count % imageArray.size < 0) count % imageArray.size + imageArray.size else count % imageArray.size
 
                         binding.imageView.setImageURI(imageArray[itemCount])
+                        binding.imageView.startAnimation(animation)
                         slideNumber.set(itemCount + 1)
                     }
                 }
@@ -204,6 +221,7 @@ class MainActivity : AppCompatActivity() {
                     if (count % imageArray.size < 0) count % imageArray.size + imageArray.size else count % imageArray.size
 
                 binding.imageView.setImageURI(imageArray[itemCount])
+                binding.imageView.startAnimation(animation)
                 slideNumber.set(itemCount + 1)
 
             } else {
@@ -237,6 +255,7 @@ class MainActivity : AppCompatActivity() {
                     if (count % imageArray.size < 0) count % imageArray.size + imageArray.size else count % imageArray.size
 
                 binding.imageView.setImageURI(imageArray[itemCount])
+                binding.imageView.startAnimation(animation)
                 slideNumber.set(itemCount + 1)
 
             } else {
@@ -254,6 +273,64 @@ class MainActivity : AppCompatActivity() {
                 this.getString(R.string.warning_no_slide),
                 Snackbar.LENGTH_LONG
             ).show()
+        }
+    }
+
+    /**
+     * 選択したアニメーションの設定
+     *
+     * @param position 選択したアニメーションのリスト上の位置
+     */
+    private fun setSelectedAnimation(position: Int) {
+        animation = when (position) {
+            1 -> {
+                // バウンド
+                AnimationUtils.loadAnimation(this, R.anim.bounce)
+            }
+            2 -> {
+                // フェードイン
+                AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            }
+            3 -> {
+                // フェードアウト
+                AnimationUtils.loadAnimation(this, R.anim.fade_out)
+            }
+            4 -> {
+                // 移動
+                AnimationUtils.loadAnimation(this, R.anim.move)
+            }
+            5 -> {
+                // 回転
+                AnimationUtils.loadAnimation(this, R.anim.rotate)
+            }
+            6 -> {
+                // スライド(下)
+                AnimationUtils.loadAnimation(this, R.anim.slide_down)
+            }
+            7 -> {
+                // スライド(左)
+                AnimationUtils.loadAnimation(this, R.anim.slide_left)
+            }
+            8 -> {
+                // スライド(右)
+                AnimationUtils.loadAnimation(this, R.anim.slide_right)
+            }
+            9 -> {
+                // スライド(上)
+                AnimationUtils.loadAnimation(this, R.anim.slide_up)
+            }
+            10 -> {
+                // 拡大
+                AnimationUtils.loadAnimation(this, R.anim.zoom_in)
+            }
+            11 -> {
+                // 縮小
+                AnimationUtils.loadAnimation(this, R.anim.zoom_out)
+            }
+            else -> {
+                // まばたき
+                AnimationUtils.loadAnimation(this, R.anim.blink)
+            }
         }
     }
     //endregion
